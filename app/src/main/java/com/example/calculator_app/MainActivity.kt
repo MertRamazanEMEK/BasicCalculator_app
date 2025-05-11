@@ -35,7 +35,8 @@ class MainActivity : AppCompatActivity() {
         sayi1 = binding.editTextNumber.text.toString().toDoubleOrNull()
         sayi2 = binding.editTextNumber2.text.toString().toDoubleOrNull()
 
-        if(sayi1 != null && sayi2 != null){
+        if(sayi1 != null && sayi2 != null)
+        {
             sonuc = sayi1!! + sayi2!!
             binding.textView.text = "Sonuç: &{sonuc}"
 
