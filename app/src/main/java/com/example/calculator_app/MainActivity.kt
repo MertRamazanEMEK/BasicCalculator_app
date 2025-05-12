@@ -20,11 +20,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-        sayi1 = binding.editTextNumber.text.toString().toDoubleOrNull()
-        sayi2 = binding.editTextNumber2.text.toString().toDoubleOrNull()
+
 
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -40,6 +38,8 @@ class MainActivity : AppCompatActivity() {
 
         if(sayi1 != null && sayi2 != null)
         {
+            sayi1 = binding.editTextNumber.text.toString().toDoubleOrNull()
+            sayi2 = binding.editTextNumber2.text.toString().toDoubleOrNull()
             sonuc = sayi1!! + sayi2!!
             binding.textView.text = "Sonuç: ${sonuc}"
 
@@ -51,6 +51,8 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     fun eksi(view : View)
     {
+        sayi1 = binding.editTextNumber.text.toString().toDoubleOrNull()
+        sayi2 = binding.editTextNumber2.text.toString().toDoubleOrNull()
         if(sayi1 != null && sayi2!=null) {
             sonuc = sayi1!! - sayi2!!
             binding.textView.text = " Sonuc: $sonuc"
@@ -63,6 +65,8 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     fun bolu (view : View)
     {
+        sayi1 = binding.editTextNumber.text.toString().toDoubleOrNull()
+        sayi2 = binding.editTextNumber2.text.toString().toDoubleOrNull()
         if(sayi1 != null && sayi2!=null) {
             sonuc = sayi1!! / sayi2!!
             binding.textView.text = " Sonuc: $sonuc"
@@ -76,6 +80,8 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     fun carpi (view : View)
     {
+        sayi1 = binding.editTextNumber.text.toString().toDoubleOrNull()
+        sayi2 = binding.editTextNumber2.text.toString().toDoubleOrNull()
         if(sayi1 != null && sayi2!=null) {
             sonuc = sayi1!! * sayi2!!
             binding.textView.text = "Sonuç: ${sonuc}"
