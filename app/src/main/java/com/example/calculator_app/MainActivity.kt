@@ -19,6 +19,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+        sayi1 = binding.editTextNumber.text.toString().toDoubleOrNull()
+        sayi2 = binding.editTextNumber2.text.toString().toDoubleOrNull()
 
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
@@ -32,19 +34,49 @@ class MainActivity : AppCompatActivity() {
 
     fun arti (view : View)
     {
-        sayi1 = binding.editTextNumber.text.toString().toDoubleOrNull()
-        sayi2 = binding.editTextNumber2.text.toString().toDoubleOrNull()
+
 
         if(sayi1 != null && sayi2 != null)
         {
             sonuc = sayi1!! + sayi2!!
-            binding.textView.text = "Sonuç: &{sonuc}"
+            binding.textView.text = "Sonuç: ${sonuc}"
 
         }
-
-
-
-
-
+        else{
+            binding.textView.text = "Lütfen numara giriniz: "
+        }
+    }
+    fun eksi(view : View)
+    {
+        if(sayi1 != null && sayi2!=null) {
+            sonuc = sayi1!! - sayi2!!
+            binding.textView.text = " Sonuc: ${sonuc}"
+        }
+        else
+        {
+            binding.textView.text ="Lütfen numara giriniz: "
+        }
+    }
+    fun bolu (view : View)
+    {
+        if(sayi1 != null && sayi2!=null) {
+            sonuc = sayi1!! / sayi2!!
+            binding.textView.text = " Sonuc: ${sonuc}"
+        }
+        else
+        {
+            binding.textView.text ="Lütfen numara giriniz: "
+        }
+    }
+    fun carpi (view : View)
+    {
+        if(sayi1 != null && sayi2!=null) {
+            sonuc = sayi1!! * sayi2!!
+            binding.textView.text = " Sonuc: ${sonuc}"
+        }
+        else
+        {
+            binding.textView.text ="Lütfen numara giriniz: "
+        }
     }
 }
