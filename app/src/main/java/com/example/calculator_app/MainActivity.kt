@@ -1,5 +1,6 @@
 package com.example.calculator_app
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
@@ -32,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     fun arti (view : View)
     {
 
@@ -46,33 +48,37 @@ class MainActivity : AppCompatActivity() {
             binding.textView.text = "Lütfen numara giriniz: "
         }
     }
+    @SuppressLint("SetTextI18n")
     fun eksi(view : View)
     {
         if(sayi1 != null && sayi2!=null) {
             sonuc = sayi1!! - sayi2!!
-            binding.textView.text = " Sonuc: ${sonuc}"
+            binding.textView.text = " Sonuc: $sonuc"
         }
         else
         {
             binding.textView.text ="Lütfen numara giriniz: "
         }
     }
+    @SuppressLint("SetTextI18n")
     fun bolu (view : View)
     {
         if(sayi1 != null && sayi2!=null) {
             sonuc = sayi1!! / sayi2!!
-            binding.textView.text = " Sonuc: ${sonuc}"
+            binding.textView.text = " Sonuc: $sonuc"
         }
         else
         {
             binding.textView.text ="Lütfen numara giriniz: "
         }
     }
+
+    @SuppressLint("SetTextI18n")
     fun carpi (view : View)
     {
         if(sayi1 != null && sayi2!=null) {
             sonuc = sayi1!! * sayi2!!
-            binding.textView.text = " Sonuc: ${sonuc}"
+            binding.textView.text = "Sonuç: ${sonuc}"
         }
         else
         {
